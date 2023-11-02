@@ -94,9 +94,9 @@
    json格式示例：
 
 {
-  "name":"kitchensink1104", //工作流名称
-  "version":"1", //工作流版本
-  "input":{ //工作流输入
+  "name":"kitchensink1104",
+  "version":"1",
+  "input":{
     "test":"sssmsmqkjammamam"
   }
 }
