@@ -5,7 +5,9 @@
 2. 创建工作流
 	resp, err := client.CreateWorkFlow(data)
 	data为工作流定义的json文件(需转为字符串格式)
-	json格式示例：
+
+   json格式示例：
+
 {
   "name": "eos_workflow_test",
   "description": "EOS Workflow Test",
@@ -84,10 +86,13 @@
   "variables": {},
   "inputTemplate": {}
 }
+
 3. 启动工作流
 	resp, err := client.RunWorkFlow(data)
 	data为工作流输入的json文件(需转为字符串格式)
-	json格式示例：
+
+   json格式示例：
+
 {
   "name":"kitchensink1104", //工作流名称
   "version":"1", //工作流版本
