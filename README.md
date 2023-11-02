@@ -11,7 +11,7 @@
   "description": "EOS Workflow Test",
   "version": 1,
   "tasks": [
-    {
+{
       "name": "get_example_occupation",
       "taskReferenceName": "get_example_occupation",
       "description": null,
