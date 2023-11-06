@@ -88,15 +88,11 @@
 }
 
 3. 启动工作流
-	resp, err := client.RunWorkFlow(data)
-	data为工作流输入的json文件(需转为字符串格式)
+	resp, err := client.RunWorkFlow("workflowName", "workflowVersion", inputContent)
+	inputContent为工作流输入的json文件(需转为字符串格式)
 
    json格式示例：
-
+   
 {
-  "name":"kitchensink1104",
-  "version":"1",
-  "input":{
-    "test":"sssmsmqkjammamam"
-  }
+   "test":"content"
 }
