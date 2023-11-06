@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"net/http"
 )
 
@@ -25,9 +26,9 @@ type ValidationError struct {
 }
 
 type RunWorkflowRequest struct {
-	Name    string      `json:"name"`
-	Version string      `json:"version"`
-	Input   interface{} `json:"input"`
+	Name    string                 `json:"name"`
+	Version string                 `json:"version"`
+	Input   map[string]interface{} `json:"input"`
 }
 
 type RunWorkflowResponse struct {
@@ -73,7 +74,7 @@ func (c *Client) RunWorkFlow(workFlowName string, workFlowVersion string, input 
 	if err != nil {
 		return apiResponse, err
 	}
-
+	fmt.Println("", string(jsonData))
 	url := c.BaseURL + "/api/workflow"
 	resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
