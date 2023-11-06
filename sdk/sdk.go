@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"net/http"
 )
 
@@ -76,7 +75,6 @@ func (c *Client) RunWorkFlow(workFlowName string, workFlowVersion string, input 
 	}
 
 	url := c.BaseURL + "/api/workflow"
-	fmt.Println("")
 	resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
 		return apiResponse, err
